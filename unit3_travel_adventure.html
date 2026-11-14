@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Omani English Adventure World | Unit 3: Travel</title>
+<style>
+:root{--navy:#19345b;--blue:#4f8edb;--teal:#39b8a5;--gold:#ffca62;--pink:#f28eaa;--cream:#fffaf0;--ink:#26344a}
+*{box-sizing:border-box}body{margin:0;font-family:system-ui,-apple-system,Segoe UI,sans-serif;color:var(--ink);background:linear-gradient(135deg,#e8f5ff,#fff5e8 55%,#f6eaff);min-height:100vh}
+header{background:linear-gradient(120deg,#17355d,#397fb8);color:white;padding:22px 18px 26px;text-align:center;position:relative;overflow:hidden}
+header:after{content:"✈️  ✦  🌴  ✦  🧳";position:absolute;right:3%;bottom:8px;font-size:28px;opacity:.28}
+.kicker{letter-spacing:2px;font-size:.75rem;font-weight:800;color:#ffe2a0}.hero{font-size:clamp(1.8rem,5vw,3rem);font-weight:900;margin:6px 0}.sub{opacity:.92}
+.wrap{max-width:1100px;margin:auto;padding:18px}
+.topbar{display:flex;gap:10px;flex-wrap:wrap;align-items:center;justify-content:space-between;margin:8px 0 16px}
+.stats{display:flex;gap:8px;flex-wrap:wrap}.pill{background:white;border:1px solid #dce7f2;border-radius:999px;padding:9px 14px;font-weight:800;box-shadow:0 3px 10px #1d477010}
+nav{display:flex;gap:8px;overflow-x:auto;padding:5px 1px 13px}
+nav button,.btn{border:0;border-radius:14px;padding:11px 15px;font-weight:800;cursor:pointer;background:#fff;color:var(--navy);box-shadow:0 4px 12px #23486b15;white-space:nowrap}
+nav button.active,.btn.primary{background:var(--navy);color:white}button:focus-visible{outline:3px solid var(--gold);outline-offset:2px}
+.panel{background:#ffffffdf;border:1px solid #fff;border-radius:24px;padding:clamp(16px,3vw,28px);box-shadow:0 12px 35px #24466b12}
+h2{color:var(--navy);margin:0 0 8px}.intro{color:#5c6c80;margin:0 0 18px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:12px}
+.tile{background:linear-gradient(145deg,#fff,#f1f8ff);border:1px solid #dfeaf4;border-radius:18px;padding:16px}
+.tile .emoji{font-size:2rem}.tile h3{margin:8px 0 4px;color:var(--navy)}
+.wordbank{display:flex;flex-wrap:wrap;gap:8px;margin:14px 0}.word{background:#eaf4ff;border-radius:999px;padding:7px 11px;font-weight:700}
+.question{padding:16px;border-radius:17px;background:#f6faff;border:1px solid #dce9f5;margin:12px 0}
+.question p{font-weight:800;margin:0 0 10px}.answers{display:flex;flex-wrap:wrap;gap:8px}
+.answers button{background:white;border:2px solid #d7e4f1;border-radius:12px;padding:9px 13px;cursor:pointer;font-weight:700;color:var(--ink)}
+.answers button:hover{border-color:var(--blue)}.answers button.correct{background:#e2f8ed;border-color:#42b879}.answers button.wrong{background:#fff0f1;border-color:#e88792}
+.feedback{font-weight:800;margin-top:8px;min-height:24px}.muted{color:#6b7a8c}
+input,textarea,select{font:inherit;border:2px solid #d8e5f1;border-radius:12px;padding:11px;width:100%;background:white}
+textarea{min-height:110px;resize:vertical}.row{display:flex;gap:10px;flex-wrap:wrap}.row>*{flex:1}
+.actions{display:flex;gap:9px;flex-wrap:wrap;margin-top:15px}.btn.secondary{background:#e9f3ff}.btn.gold{background:var(--gold);color:#4b3a16}
+.result{margin-top:14px;padding:12px 15px;border-radius:14px;background:#fff7df;font-weight:800;display:none}
+footer{text-align:center;padding:24px 10px;color:#66788d;font-size:.9rem}
+.hidden{display:none!important}.progress{height:10px;background:#e4edf6;border-radius:99px;overflow:hidden;margin:12px 0}.progress span{display:block;height:100%;background:linear-gradient(90deg,var(--teal),var(--blue));width:0;transition:width .3s}
+@media(max-width:600px){.wrap{padding:12px}.topbar{align-items:flex-start}.panel{border-radius:18px}nav button{padding:10px 12px}}
+</style>
+</head>
+<body>
+<header>
+ <div class="kicker">GRADE 7 • ENGLISH • UNIT 3</div>
+ <div class="hero">✈️ Travel Adventure</div>
+ <div class="sub">Learn • Play • Explore • Shine!</div>
+</header>
+<main class="wrap">
+ <div class="topbar">
+  <div class="stats"><span class="pill">⭐ Points: <b id="points">0</b></span><span class="pill">🏅 Badges: <b id="badges">0</b></span><span class="pill">🎯 Level: <b id="level">Explorer</b></span></div>
+  <button class="btn secondary" id="soundBtn" onclick="toggleSound()">🔊 Sound: On</button>
+ </div>
+ <nav id="tabs">
+  <button class="active" data-tab="home">🏡 Home</button><button data-tab="packing">🧳 Packing</button><button data-tab="transport">🚆 Travel verbs</button><button data-tab="grammar">⏳ Grammar</button><button data-tab="feelings">💬 Feelings</button><button data-tab="writing">✍️ Writing</button><button data-tab="certificate">🏆 Award</button>
+ </nav>
+ <section id="home" class="panel">
+  <h2>Welcome, Travel Explorer!</h2><p class="intro">Complete the missions to collect points. Read carefully, choose an answer and check your feedback.</p>
+  <div class="grid">
+   <div class="tile"><div class="emoji">🧳</div><h3>Mission 1: Pack your suitcase</h3><p>Learn the holiday equipment words.</p></div>
+   <div class="tile"><div class="emoji">🚉</div><h3>Mission 2: Travel race</h3><p>Practise transport and travel verbs.</p></div>
+   <div class="tile"><div class="emoji">⏰</div><h3>Mission 3: Future grammar</h3><p>Choose going to, will or the present simple.</p></div>
+   <div class="tile"><div class="emoji">💭</div><h3>Mission 4: Future feelings</h3><p>Say how you feel about your plans.</p></div>
+   <div class="tile"><div class="emoji">📝</div><h3>Mission 5: Writing studio</h3><p>Write about a journey or a school trip.</p></div>
+   <div class="tile"><div class="emoji">🏆</div><h3>Final award</h3><p>Enter your name and celebrate your progress.</p></div>
+  </div>
+  <div class="actions"><button class="btn primary" onclick="showTab('packing')">Start the adventure →</button></div>
+ </section>
+ <section id="packing" class="panel hidden">
+  <h2>🧳 Mission 1: Pack your suitcase</h2><p class="intro">Choose the correct word for each clue.</p>
+  <div class="wordbank"><span class="word">passport</span><span class="word">guidebook</span><span class="word">charger</span><span class="word">suitcase</span><span class="word">raincoat</span><span class="word">medicines</span><span class="word">umbrella</span><span class="word">flip-flops</span><span class="word">pillow</span><span class="word">washbag</span><span class="word">toothbrush</span><span class="word">soap</span></div>
+  <div id="packingQs"></div><div class="actions"><button class="btn primary" onclick="checkSet('packingQs')">Check answers</button><button class="btn secondary" onclick="resetSet('packingQs')">Try again</button></div><div class="result" id="packingResult"></div>
+ </section>
+ <section id="transport" class="panel hidden">
+  <h2>🚆 Mission 2: Travel verbs</h2><p class="intro">Choose the phrase that completes each sentence.</p>
+  <div class="wordbank"><span class="word">pack your suitcase</span><span class="word">go on a journey</span><span class="word">travel by train</span><span class="word">catch a bus</span><span class="word">get on</span><span class="word">get off</span><span class="word">take off</span><span class="word">land</span><span class="word">arrive</span><span class="word">leave</span><span class="word">explore</span><span class="word">take a seat</span></div>
+  <div id="transportQs"></div><div class="actions"><button class="btn primary" onclick="checkSet('transportQs')">Check answers</button><button class="btn secondary" onclick="resetSet('transportQs')">Try again</button></div><div class="result" id="transportResult"></div>
+ </section>
+ <section id="grammar" class="panel hidden">
+  <h2>⏳ Mission 3: Future grammar</h2><p class="intro">Remember: <b>going to</b> = a plan already decided. <b>will</b> = a decision made at the time of speaking. <b>Present simple</b> = timetables and fixed plans.</p>
+  <div class="grid">
+   <div class="tile"><h3>GOING TO</h3><p>We’re going to visit Salalah.</p><small>A plan decided before speaking.</small></div>
+   <div class="tile"><h3>WILL</h3><p>I’ll take a small bag, too.</p><small>A decision made now.</small></div>
+   <div class="tile"><h3>PRESENT SIMPLE</h3><p>The train leaves at 6 o’clock.</p><small>A timetable or fixed plan.</small></div>
+  </div>
+  <div id="grammarQs"></div><div class="actions"><button class="btn primary" onclick="checkSet('grammarQs')">Check answers</button><button class="btn secondary" onclick="resetSet('grammarQs')">Try again</button></div><div class="result" id="grammarResult"></div>
+ </section>
+ <section id="feelings" class="panel hidden">
+  <h2>💬 Mission 4: How do you feel about the future?</h2><p class="intro">Choose the phrase that best completes each sentence.</p>
+  <div id="feelingsQs"></div><div class="actions"><button class="btn primary" onclick="checkSet('feelingsQs')">Check answers</button><button class="btn secondary" onclick="resetSet('feelingsQs')">Try again</button></div><div class="result" id="feelingsResult"></div>
+ </section>
+ <section id="writing" class="panel hidden">
+  <h2>✍️ Mission 5: Writing studio</h2><p class="intro">Write about a journey or a school trip. Try to write 35 words or more. Use the prompts to help you.</p>
+  <div class="wordbank"><span class="word">Where are you going to go?</span><span class="word">How are you going to travel?</span><span class="word">When do you leave?</span><span class="word">What are you going to take?</span><span class="word">What are you going to see?</span><span class="word">How do you feel?</span></div>
+  <textarea id="writingText" placeholder="My family and I are going to ..."></textarea><div class="row"><div class="pill">Words: <b id="wordCount">0</b></div><div class="pill">Target: 35+ words</div></div>
+  <div class="actions"><button class="btn primary" onclick="saveWriting()">Save my writing</button><button class="btn secondary" onclick="clearWriting()">Clear</button></div><div class="result" id="writingResult"></div>
+ </section>
+ <section id="certificate" class="panel hidden">
+  <h2>🏆 Your Travel Explorer Award</h2><p class="intro">You have worked hard. Add your name to create your award.</p>
+  <label for="studentName"><b>Student name</b></label><input id="studentName" placeholder="Write your name here">
+  <div class="actions"><button class="btn gold" onclick="makeAward()">Create my award ✨</button><button class="btn secondary" onclick="window.print()">Print / Save as PDF</button></div>
+  <div id="award" class="tile hidden" style="text-align:center;margin-top:18px;padding:28px">
+   <div style="font-size:3rem">🏆🌍✈️</div><h2>TRAVEL EXPLORER AWARD</h2><p>This award is proudly presented to</p><h2 id="awardName" style="color:#b17a1c"></h2><p>for completing the Unit 3 Travel Adventure!</p><h3 id="awardPoints"></h3><p>Keep learning and reaching for the stars!</p><hr><b>T. Badria Alfalahi</b><p>English Teacher</p>
+  </div>
+ </section>
+</main>
+<footer>Created by T. Badria Alfalahi ❤️🌸 • Grade 7 English • Unit 3: Travel</footer>
+<script>
+const data={
+packingQs:[
+["You carry it for identification. What is it?","passport",["passport","guidebook","charger"]],
+["You use it to clean your teeth.","toothbrush",["soap","toothbrush","pillow"]],
+["You wear it when the weather is wet.","raincoat",["flip-flops","raincoat","suitcase"]],
+["You carry your clothes in it.","suitcase",["suitcase","washbag","umbrella"]],
+["You use it to keep your phone battery full.","charger",["charger","passport","pillow"]],
+["You use it to wash your body.","soap",["soap","medicine","guidebook"]],
+["You wear them on sunny days at the beach.","flip-flops",["flip-flops","raincoat","toothbrush"]],
+["You can sleep more comfortably with it on a night journey.","pillow",["pillow","umbrella","charger"]]
+],
+transportQs:[
+["Before a holiday, you need to ___ .","pack your suitcase",["pack your suitcase","take a seat","land"]],
+["We can ___ to Cairo by train.","travel",["travel","arrive","leave"],"travel by train"],
+["Hurry! We need to ___ the bus.","catch",["catch","explore","land"],"catch a bus"],
+["Passengers ___ the plane at the airport.","get on",["get on","get off","take off"]],
+["The plane will ___ at ten o’clock.","take off",["take off","arrive","explore"]],
+["The plane will ___ in Cairo at 2.45.","land",["land","leave","get on"]],
+["When we ___, we can visit the city.","arrive",["arrive","take a seat","pack your suitcase"]],
+["Let’s ___ the old city and see its famous places.","explore",["explore","take off","get on"]]
+],
+grammarQs:[
+["We have already planned our holiday. We ___ visit Salalah.","are going to",["are going to","will","leaves"]],
+["The phone is ringing. I ___ answer it!","will",["am going to","will","leave"]],
+["The train ___ at 6 o’clock tomorrow.","leaves",["will leave","is going to leave","leaves"]],
+["They ___ take a guidebook. (negative plan)","aren’t going to",["won’t","aren’t going to","doesn’t"]],
+["The flight ___ at 3.00 p.m. (timetable)","lands",["will land","is going to land","lands"]],
+["I forgot my charger. Don’t worry, I ___ lend you mine.","will",["am going to","will","lands"]],
+["What time ___ the bus leave?","does",["will","is","does"]]
+],
+feelingsQs:[
+["I’m really ___ the summer holidays!","looking forward to",["looking forward to","worried about","not looking forward to"]],
+["I can’t wait ___ go camping.","to",["to","for","about"]],
+["I’m ___ about the journey because I don’t like long car journeys.","worried",["excited","worried","looking forward"]],
+["I’m really excited ___ our trip.","about",["about","to","for"]],
+["I’m not looking forward ___ flying.","to",["to","about","for"]]
+]};
+let points=0,badges=new Set(),sound=true;
+function renderSet(id){const root=document.getElementById(id);root.innerHTML="";data[id.replace("Qs","")].forEach((q,i)=>{const box=document.createElement("div");box.className="question";box.dataset.answer=q[1];box.dataset.done="";box.innerHTML=`<p>${i+1}. ${q[0]}</p><div class="answers"></div><div class="feedback"></div>`;const opts=box.querySelector(".answers");q[2].forEach(opt=>{let b=document.createElement("button");b.textContent=opt;b.onclick=()=>{if(box.dataset.done==="yes")return;box.querySelectorAll("button").forEach(x=>x.classList.remove("correct","wrong"));b.classList.add(opt===q[1]?"correct":"wrong");box.querySelector(".feedback").textContent=opt===q[1]?"✓ Great job!":"Try again!";if(opt===q[1]){box.dataset.done="yes";awardPoint(2)}playTone(opt===q[1])};opts.appendChild(b)});root.appendChild(box)})}
+function awardPoint(n){points+=n;document.getElementById("points").textContent=points;document.getElementById("level").textContent=points>=40?"Super Traveller":points>=20?"Travel Pro":"Explorer";if(points>=10)badges.add("First steps");if(points>=25)badges.add("Travel star");if(points>=40)badges.add("Unit champion");document.getElementById("badges").textContent=badges.size}
+function checkSet(id){let boxes=[...document.querySelectorAll("#"+id+" .question")],correct=boxes.filter(x=>x.dataset.done==="yes").length;let key=id.replace("Qs","");let r=document.getElementById(key+"Result");r.style.display="block";r.textContent=`You have completed ${correct} out of ${boxes.length} questions. ${correct===boxes.length?"Excellent work! 🌟":"Keep trying. You can do it! 💪"}`}
+function resetSet(id){renderSet(id);document.getElementById(id.replace("Qs","")+"Result").style.display="none"}
+function showTab(id){document.querySelectorAll("main section").forEach(s=>s.classList.add("hidden"));document.getElementById(id).classList.remove("hidden");document.querySelectorAll("nav button").forEach(b=>b.classList.toggle("active",b.dataset.tab===id));window.scrollTo({top:0,behavior:"smooth"})}
+document.querySelectorAll("nav button").forEach(b=>b.onclick=()=>showTab(b.dataset.tab));
+function toggleSound(){sound=!sound;document.getElementById("soundBtn").textContent=sound?"🔊 Sound: On":"🔇 Sound: Off"}
+function playTone(ok){if(!sound)return;try{const C=window.AudioContext||window.webkitAudioContext;if(!C)return;const c=new C(),o=c.createOscillator(),g=c.createGain();o.connect(g);g.connect(c.destination);o.frequency.value=ok?660:220;g.gain.value=.06;o.start();o.stop(c.currentTime+.12)}catch(e){}}
+function saveWriting(){let t=document.getElementById("writingText").value.trim(),n=t? t.split(/\s+/).length:0;document.getElementById("writingResult").style.display="block";document.getElementById("writingResult").textContent=n>=35?`Well done! You wrote ${n} words. ⭐`:`You wrote ${n} words. Add ${35-n} more words to reach the target.`;if(n>=35)awardPoint(5)}
+function clearWriting(){document.getElementById("writingText").value="";document.getElementById("wordCount").textContent="0";document.getElementById("writingResult").style.display="none"}
+document.getElementById("writingText").addEventListener("input",e=>document.getElementById("wordCount").textContent=e.target.value.trim()?e.target.value.trim().split(/\s+/).length:0);
+function makeAward(){let name=document.getElementById("studentName").value.trim();if(!name){alert("Please write your name first.");return}document.getElementById("awardName").textContent=name;document.getElementById("awardPoints").textContent=`⭐ ${points} POINTS ⭐`;document.getElementById("award").classList.remove("hidden");awardPoint(0)}
+["packingQs","transportQs","grammarQs","feelingsQs"].forEach(renderSet);
+</script>
+</body>
+</html>
